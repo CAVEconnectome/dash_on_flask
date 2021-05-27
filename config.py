@@ -1,14 +1,14 @@
 import os
-from dashconnectivityviewer.layout import layout as dclayout
-import dashconnectivityviewer.callbacks
+from dashconnectivityviewer.layout import layout as dcvlayout
+from dashconnectivityviewer.callbacks import register_callbacks as dcvregister_callbacks
 
 class BaseConfig:
     SECRET_KEY = os.environ['SECRET_KEY']
 
     DASH_APPS = {
         'connectivity':{
-            'layout': dclayout,
-            'register_callbacks': dashconnectivityviewer.callbacks.register_callbacks,
+            'layout': dcvlayout,
+            'register_callbacks': dcvregister_callbacks,
             'config': {}
         }
     }
