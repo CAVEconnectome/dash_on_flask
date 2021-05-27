@@ -1,5 +1,14 @@
 import os
+from dashconnectivityviewer.layout import layout as dclayout
+import dashconnectivityviewer.callbacks
 
 class BaseConfig:
-    SQLALCHEMY_TRACK_MODIFICATIONS = False
     SECRET_KEY = os.environ['SECRET_KEY']
+
+    DASH_APPS = {
+        'connectivity':{
+            'layout': dclayout,
+            'register_callbacks': dashconnectivityviewer.callbacks.register_callbacks,
+            'config': {}
+        }
+    }

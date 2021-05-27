@@ -1,7 +1,15 @@
-<div>
-  Test:
-  <a href="{{ url_for('main.index') }}">Home</a>
-
-  {% block content %}
-  {% endblock %}
-</div>
+<!doctype html>
+<title>{% block title %}{% endblock %} - Dash App Server - v.{{version}}</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<nav>
+  <ul><li>
+     <a href="{{url_for('main.index')}}">Dash App Server  - v.{{version}}</a>
+  </li>
+  </ul>
+</nav>
+<section class="content">
+  <header>
+    {% block header %}{% endblock %}
+  </header>
+  {% block content %}{% endblock %}
+</section>

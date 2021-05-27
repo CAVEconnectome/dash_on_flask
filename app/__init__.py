@@ -6,7 +6,7 @@ from config import BaseConfig
 
 
 def create_app():
-    server = Flask(__name__)
+    server = Flask(__name__, static_folder='./static')
     server.config.from_object(BaseConfig)
 
     register_dashapps(server)
@@ -17,24 +17,26 @@ def create_app():
 
 
 def register_dashapps(app):
-    from app.dashapp1.layout import layout
-    from app.dashapp1.callbacks import register_callbacks
-
+    
     # Meta tags for viewport responsiveness
-    meta_viewport = {"name": "viewport", "content": "width=device-width, initial-scale=1, shrink-to-fit=no"}
+    meta_viewport = {"name": "viewport",
+                     "content": "width=device-width, initial-scale=1, shrink-to-fit=no"}
+    dashapps =[]
+    for dapp,dapp_config in app.config['DASH_APPS'].items():
+            
+        dashapp1 = dash.Dash(__name__ + dapp,
+                            server=app,
+                            url_base_pathname=f'/{dapp}/',
+                            assets_folder=get_root_path(__name__) + f'/{dapp}/assets/',
+                            meta_tags=[meta_viewport])
 
-    dashapp1 = dash.Dash(__name__,
-                         server=app,
-                         url_base_pathname='/dashboard/',
-                         assets_folder=get_root_path(__name__) + '/dashboard/assets/',
-                         meta_tags=[meta_viewport])
+        with app.app_context():
+            dashapp1.title = 'Dashapp 1'
+            dashapp1.layout = dapp_config['layout']
+            dapp_config['register_callbacks'](dashapp1, dapp_config['config'])
 
-    with app.app_context():
-        dashapp1.title = 'Dashapp 1'
-        dashapp1.layout = layout
-        register_callbacks(dashapp1)
-
-    _protect_dashviews(dashapp1)
+        _protect_dashviews(dashapp1)
+        dashapps.append(dashapp1)
 
 
 def _protect_dashviews(dashapp):
@@ -52,4 +54,4 @@ def register_extensions(server):
 def register_blueprints(server):
     from app.webapp import server_bp
 
-    server.register_blueprint(server_bp)
+    server.register_blueprint(server_bp,)

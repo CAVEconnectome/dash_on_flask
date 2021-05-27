@@ -2,4 +2,12 @@
 
 {% block content %}
 
+<table>
+<tr>
+  <td>Apps</td></tr>
+{% for app in config.DASH_APPS.keys() %}
+  <tr><td><a href = "/{{app}}" >{{app}}</a></td></tr>
+{% endfor %}
+
+</table>
 {% endblock %}
