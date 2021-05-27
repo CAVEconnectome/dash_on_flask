@@ -281,4 +281,6 @@ werkzeug==1.0.1; python_version >= "2.7" and python_full_version < "3.0.0" or py
 wtforms==2.3.3 \
     --hash=sha256:7b504fc724d0d1d4d5d5c114e778ec88c37ea53144683e084215eed5155ada4c \
     --hash=sha256:81195de0ac94fbc8368abbaf9197b88c4f3ffd6c2719b5bf5fc9da744f3d829c
+middle-auth-client==3.2.5; python_version >= "3.6" \
+    --hash=sha256:b21d07b5d75a13aadf76e3a667929b53c7036c0c28320d155aa294e6fc361bde
 cryptography

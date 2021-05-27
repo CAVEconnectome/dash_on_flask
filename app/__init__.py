@@ -1,9 +1,10 @@
 import dash
 from flask import Flask
 from flask.helpers import get_root_path
-
+from middle_auth_client import (auth_required, auth_requires_admin,
+                                auth_requires_permission)
 from config import BaseConfig
-
+import os
 
 def create_app():
     server = Flask(__name__, static_folder='./static')
@@ -42,9 +43,8 @@ def register_dashapps(app):
 def _protect_dashviews(dashapp):
     for view_func in dashapp.server.view_functions:
         if view_func.startswith(dashapp.config.url_base_pathname):
-            pass
             #todo: add middle auth client protection here
-            #dashapp.server.view_functions[view_func] = login_required(dashapp.server.view_functions[view_func])
+            dashapp.server.view_functions[view_func] = auth_required(func=dashapp.server.view_functions[view_func])
 
 
 def register_extensions(server):
