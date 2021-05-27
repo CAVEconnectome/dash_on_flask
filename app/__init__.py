@@ -7,7 +7,9 @@ from config import BaseConfig
 import os
 
 def create_app():
-    server = Flask(__name__, static_folder='./static')
+    server = Flask(__name__, static_folder='./static',
+                   static_url_path='/dash/static',
+                   instance_relative_config=True)
     server.config.from_object(BaseConfig)
 
     register_dashapps(server)
@@ -27,7 +29,7 @@ def register_dashapps(app):
             
         dashapp1 = dash.Dash(__name__ + dapp,
                             server=app,
-                            url_base_pathname=f'/{dapp}/',
+                            url_base_pathname=f'/dash/{dapp}/',
                             assets_folder=get_root_path(__name__) + f'/{dapp}/assets/',
                             meta_tags=[meta_viewport])
 
@@ -54,4 +56,5 @@ def register_extensions(server):
 def register_blueprints(server):
     from app.webapp import server_bp
 
-    server.register_blueprint(server_bp,)
+    server.register_blueprint(server_bp,
+                              url_prefix='/dash/')
