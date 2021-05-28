@@ -3,21 +3,20 @@ from flask import Flask
 from flask.helpers import get_root_path
 from middle_auth_client import (auth_required, auth_requires_admin,
                                 auth_requires_permission)
-from config import BaseConfig
+from .config import configure_app
 import os
 
 def create_app():
     server = Flask(__name__, static_folder='./static',
                    static_url_path='/dash/static',
                    instance_relative_config=True)
-    server.config.from_object(BaseConfig)
+    server=configure_app(server)
 
     register_dashapps(server)
     register_extensions(server)
     register_blueprints(server)
 
     return server
-
 
 def register_dashapps(app):
     

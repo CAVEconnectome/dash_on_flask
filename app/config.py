@@ -17,3 +17,20 @@ class BaseConfig:
             'config': {}
         }
     }
+
+config = {
+    "default": "app.config.BaseConfig",
+    "development": "app.config.BaseConfig",
+    "testing": "app.config.BaseConfig",
+    "production": "app.config.BaseConfig",
+}
+
+def configure_app(app):
+    config_name = os.getenv("FLASK_CONFIGURATION", "default")
+    # object-based default configuration
+    app.config.from_object(config[config_name])
+    if "DASH_SETTINGS" in os.environ.keys():
+        app.config.from_envvar("DASH_SETTINGS")
+    # instance-folders configuration
+    app.config.from_pyfile("config.cfg", silent=True)
+    return app
