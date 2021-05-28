@@ -31,10 +31,11 @@ def register_dashapps(app):
                             server=app,
                             url_base_pathname=f'/dash/apps/{dapp}/',
                             assets_folder=get_root_path(__name__) + f'/{dapp}/apps/assets/',
+                            external_stylesheets=dapp_config.get('external_stylesheets', None),
                             meta_tags=[meta_viewport])
 
         with app.app_context():
-            dashapp1.title = 'Dashapp 1'
+            dashapp1.title = dapp
             dashapp1.layout = dapp_config['layout']
             dapp_config['register_callbacks'](dashapp1, dapp_config['config'])
 
