@@ -4,6 +4,9 @@ from dashconnectivityviewer.callbacks import register_callbacks as dcvregister_c
 
 class BaseConfig:
     SECRET_KEY = os.environ['SECRET_KEY']
+    DASH_DATASTACK_SUPPORT={
+        'minnie65_phase3_v1':['connectivity']
+    }
 
     DASH_APPS = {
         'connectivity':{

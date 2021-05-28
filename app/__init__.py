@@ -29,8 +29,8 @@ def register_dashapps(app):
             
         dashapp1 = dash.Dash(__name__ + dapp,
                             server=app,
-                            url_base_pathname=f'/dash/{dapp}/',
-                            assets_folder=get_root_path(__name__) + f'/{dapp}/assets/',
+                            url_base_pathname=f'/dash/apps/{dapp}/',
+                            assets_folder=get_root_path(__name__) + f'/{dapp}/apps/assets/',
                             meta_tags=[meta_viewport])
 
         with app.app_context():

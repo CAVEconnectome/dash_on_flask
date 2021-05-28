@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<table>
+<tr>
+  <td>Apps</td></tr>
+{% for app in config.DASH_DATASTACK_SUPPORT[datastack] %}
+  <tr><td><a href = "/dash/apps/{{app}}?datastack={{datastack}}">{{app}}</a></td></tr>
+{% endfor %}
+
+</table>
+{% endblock %}

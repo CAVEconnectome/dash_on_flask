@@ -4,9 +4,9 @@
 
 <table>
 <tr>
-  <td>Apps</td></tr>
-{% for app in config.DASH_APPS.keys() %}
-  <tr><td><a href = "{{app}}" >{{app}}</a></td></tr>
+  <td>datastacks</td></tr>
+{% for datastack in config.DASH_DATASTACK_SUPPORT.keys() %}
+  <tr><td><a href = {{url_for('main.datastack_view', datastack_name=datastack)}} >{{datastack}}</a></td></tr>
 {% endfor %}
 
 </table>
