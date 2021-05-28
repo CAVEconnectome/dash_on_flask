@@ -34,3 +34,4 @@ werkzeug==1.0.1; python_version >= "2.7" and python_full_version < "3.0.0" or py
 wtforms==2.3.3 
 middle-auth-client==3.2.5; python_version >= "3.6"
 cryptography
+-e git+git@github.com:ceesem/dash-connectivity-viewer.git@datastack_query_parameter#egg=dashconnectivityviewer
