@@ -4,6 +4,7 @@ from flask.helpers import get_root_path
 from middle_auth_client import (auth_required, auth_requires_admin,
                                 auth_requires_permission)
 from .config import configure_app
+from .reset_auth import reset_auth
 import os
 
 def create_app():
@@ -25,18 +26,14 @@ def register_dashapps(app):
                      "content": "width=device-width, initial-scale=1, shrink-to-fit=no"}
     dashapps =[]
     for dapp,dapp_config in app.config['DASH_APPS'].items():
-            
-        dashapp1 = dash.Dash(__name__ + dapp,
-                            server=app,
-                            url_base_pathname=f'/dash/apps/{dapp}/',
-                            assets_folder=get_root_path(__name__) + f'/{dapp}/apps/assets/',
-                            external_stylesheets=dapp_config.get('external_stylesheets', None),
-                            meta_tags=[meta_viewport])
-
+        create_app = dapp_config['create_app']
         with app.app_context():
-            dashapp1.title = dapp
-            dashapp1.layout = dapp_config['layout']
-            dapp_config['register_callbacks'](dashapp1, dapp_config['config'])
+            dashapp1 = create_app( __name__ + dapp,
+                              config=dapp_config,
+                              server=app,
+                              url_base_pathname=f'/dash/apps/{dapp}/',
+                              assets_folder=get_root_path(__name__) + f'/{dapp}/apps/assets/',
+                              meta_tags=[meta_viewport])
 
         _protect_dashviews(dashapp1)
         dashapps.append(dashapp1)
@@ -46,6 +43,7 @@ def _protect_dashviews(dashapp):
     for view_func in dashapp.server.view_functions:
         if view_func.startswith(dashapp.config.url_base_pathname):
             #todo: add middle auth client protection here
+            print('protecting', view_func)
             dashapp.server.view_functions[view_func] = auth_required(func=dashapp.server.view_functions[view_func])
 
 
