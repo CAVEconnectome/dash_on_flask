@@ -5,7 +5,7 @@ from dashcelltypeviewer import create_app as celltype_create_app
 class BaseConfig:
     SECRET_KEY = os.environ['SECRET_KEY']
     DASH_DATASTACK_SUPPORT={
-        'minnie65_phase3_v1':['connectivity', 'celltype'],
+        'minnie65_phase3_v1':['connectivity', 'cell_type'],
     }
 
     DASH_APPS = {
