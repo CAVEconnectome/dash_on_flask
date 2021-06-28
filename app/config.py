@@ -1,23 +1,21 @@
 import os
-from dashconnectivityviewer import create_app
-from dashcelltypeviewer import create_app as celltype_create_app
+from dashconnectivityviewer import cell_type_connectivity, cell_type_table
+
 
 class BaseConfig:
-    SECRET_KEY = os.environ['SECRET_KEY']
-    DASH_DATASTACK_SUPPORT={
-        'minnie65_phase3_v1':['connectivity', 'cell_type'],
+    SECRET_KEY = os.environ["SECRET_KEY"]
+    DASH_DATASTACK_SUPPORT = {
+        "minnie65_phase3_v1": ["connectivity", "cell_type"],
     }
 
     DASH_APPS = {
-        'connectivity':{
-            'create_app': create_app,
-            'config': {}
+        "connectivity": {"create_app": cell_type_connectivity.create_app, "config": {}},
+        "cell_type": {
+            "create_app": cell_type_table.create_app,
+            "config": {},
         },
-        'cell_type':{
-            'create_app': celltype_create_app,
-            'config': {}
-        }
     }
+
 
 config = {
     "default": "app.config.BaseConfig",
@@ -25,6 +23,7 @@ config = {
     "testing": "app.config.BaseConfig",
     "production": "app.config.BaseConfig",
 }
+
 
 def configure_app(app):
     config_name = os.getenv("FLASK_CONFIGURATION", "default")
