@@ -3,11 +3,14 @@
 {% block content %}
 
 <table>
-<tr>
-  <td>Apps</td></tr>
-{% for app in config.DASH_DATASTACK_SUPPORT[datastack] %}
-  <tr><td><a href = '/dash/apps/{{app}}?datastack="{{datastack}}"'>{{app}}</a></td></tr>
-{% endfor %}
+  <tr>
+    <td>Apps</td>
+  </tr>
+  {% for app in config.DASH_DATASTACK_SUPPORT[datastack].keys() %}
+  <tr>
+    <td><a href='/dash/datastack/{{datastack}}/apps/{{app}}/?datastack="{{datastack}}"'>{{app}}</a></td>
+  </tr>
+  {% endfor %}
 
 </table>
 {% endblock %}
