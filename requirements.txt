@@ -32,6 +32,6 @@ six==1.15.0; python_version >= "2.7" and python_full_version < "3.0.0" or python
 urllib3==1.26.4; python_version >= "3.6" and python_full_version < "3.0.0" or python_full_version >= "3.5.0" and python_version < "4" and python_version >= "3.6"
 werkzeug==1.0.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.5.0"
 wtforms==2.3.3 
-middle-auth-client>=3.4.1; python_version >= "3.6"
+middle-auth-client>=3.6.4; python_version >= "3.6"
 cryptography
 -e git+git://github.com/ceesem/dash-connectivity-viewer.git@master#egg=dash_connectivity_viewer
