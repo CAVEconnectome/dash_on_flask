@@ -58,7 +58,9 @@ def _protect_dashviews(dashapp, datastack):
         if view_func.startswith(dashapp.config.url_base_pathname):
             # todo: add middle auth client protection here
             print("protecting", view_func)
-            dashapp.server.view_functions[view_func] = auth_requires_permission('view', 'datastack', 'datastack')(dashapp.server.view_functions[view_func])
+            dashapp.server.view_functions[view_func] = auth_requires_permission(
+                "view", table_id=datastack, resource_namespace="datastack"
+            )(dashapp.server.view_functions[view_func])
 
 
 def register_extensions(server):
