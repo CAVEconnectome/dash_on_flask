@@ -32,6 +32,22 @@ ct_config = {
             "value": "allen_column_basket_molecular",
         },
     ],
+    "omit_cell_type_tables": ["nucleus_neuron_svm"],
+    "valence_map_table": {
+        "allen_v1_column_types_slanted": [
+            "classification_system",
+            "aibs_coarse_excitatory",
+            "aibs_coarse_inhibitory",
+        ],
+        "allen_soma_coarse_cell_class_model_v1": [
+            "classification_system",
+            "aibs_coarse_excitatory",
+            "aibs_coarse_inhibitory",
+        ],
+    },
+    "cell_type_column_schema_lookup": {
+        "cell_type_local": "cell_type",
+    },
 }
 
 
@@ -49,10 +65,14 @@ class BaseConfig:
             },
         },
         "minnie65_public_v117": {
+            "cell_type": {
+                "create_app": cell_type_table.create_app,
+                "config": ct_config,
+            },
             "connectivity_table": {
                 "create_app": connectivity_table.create_app,
                 "config": {},
-            }
+            },
         },
     }
 
