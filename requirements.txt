@@ -21,7 +21,7 @@ mako==1.1.4; python_version >= "2.7" and python_full_version < "3.0.0" or python
 markupsafe==1.1.1; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0" 
 numpy==1.20.2; python_full_version >= "3.7.1" and python_version >= "3.7" 
 pandas-datareader==0.9.0; python_version >= "3.6"
-plotly==4.14.3; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.3.0"
+plotly==5.5.0; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.3.0"
 python-dateutil==2.8.1; python_full_version >= "3.7.1" and python_version >= "3.6"
 python-dotenv==0.17.1
 python-editor==1.0.4; python_version >= "2.7" and python_full_version < "3.0.0" or python_full_version >= "3.6.0"
