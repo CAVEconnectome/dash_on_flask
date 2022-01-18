@@ -1,11 +1,6 @@
 from flask import Blueprint
-from flask import redirect
 from flask import render_template
-from flask import request
-from flask import url_for
 from middle_auth_client import auth_requires_permission
-
-from werkzeug.urls import url_parse
 
 __version__ = "0.0.1"
 
