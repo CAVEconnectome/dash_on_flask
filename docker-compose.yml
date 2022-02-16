@@ -4,9 +4,9 @@ services:
     base:
         build: .
         volumes:
-          - .:/app
+            - .:/app
         env_file:
-          - .env
+            - .prod.env
         command: 'false'
 
     app:

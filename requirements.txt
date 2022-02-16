@@ -35,3 +35,4 @@ wtforms==2.3.3
 middle-auth-client>=3.7.0; python_version >= "3.6"
 cryptography
 -e git+git://github.com/ceesem/dash-connectivity-viewer.git@master#egg=dash_connectivity_viewer
+-e git+git://git@github.com:seung-lab/FlyWireDashApps.git@master#egg=flywiredashapps

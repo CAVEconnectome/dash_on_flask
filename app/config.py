@@ -63,6 +63,10 @@ class BaseConfig:
                 "create_app": cell_type_connectivity.create_app,
                 "config": ct_config,
             },
+            "basic_connectivity": {
+                "create_app": connectivity_table.create_app,
+                "config": {},
+            },
         },
         "minnie65_public_v117": {
             "cell_type": {
