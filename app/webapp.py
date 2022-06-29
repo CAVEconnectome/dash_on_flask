@@ -2,7 +2,7 @@ from flask import Blueprint
 from flask import render_template
 from middle_auth_client import auth_requires_permission
 
-__version__ = "1.4.0"
+__version__ = "1.5.0"
 
 server_bp = Blueprint("main", __name__)
 
