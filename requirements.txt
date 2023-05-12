@@ -35,7 +35,7 @@ cachetools==5.3.0
     #   dash-connectivity-viewer
     #   google-auth
     #   middle-auth-client
-caveclient==5.2.1
+caveclient==5.5.1
     # via
     #   dash-connectivity-viewer
     #   flywiredashapps
