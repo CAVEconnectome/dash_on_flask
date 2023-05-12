@@ -1,0 +1,5 @@
+flask
+dash
+dash-connectivity-viewer==2.0.3
+middle-auth-client>=3.11.1
+-e git+https://github.com/seung-lab/FlyWireDashApps.git@main#egg=flywiredashapps
