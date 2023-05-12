@@ -1,0 +1,1 @@
+docker run -v ${PWD}:/app caveconnectome/dashonflask:vgeneraldash1  /bin/bash -c "pip install pip-tools && pip-compile -v -r requirements.in"
