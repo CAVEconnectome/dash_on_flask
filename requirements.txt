@@ -80,7 +80,7 @@ dash-bootstrap-components==1.4.1
     # via
     #   dash-connectivity-viewer
     #   flywiredashapps
-dash-connectivity-viewer==2.0.3
+dash-connectivity-viewer==2.0.5
     # via -r requirements.in
 dash-core-components==2.0.0
     # via dash
