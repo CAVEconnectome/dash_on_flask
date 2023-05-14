@@ -213,7 +213,7 @@ networkx==3.1
     #   annotationframeworkclient
     #   caveclient
     #   cloud-volume
-nglui==2.14.0
+nglui==2.14.1
     # via
     #   dash-connectivity-viewer
     #   flywiredashapps
