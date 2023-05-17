@@ -80,7 +80,7 @@ dash-bootstrap-components==1.4.1
     # via
     #   dash-connectivity-viewer
     #   flywiredashapps
-dash-connectivity-viewer==2.0.5
+dash-connectivity-viewer==2.0.6
     # via -r requirements.in
 dash-core-components==2.0.0
     # via dash
@@ -213,7 +213,7 @@ networkx==3.1
     #   annotationframeworkclient
     #   caveclient
     #   cloud-volume
-nglui==2.14.1
+nglui==2.14.2
     # via
     #   dash-connectivity-viewer
     #   flywiredashapps
