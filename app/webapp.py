@@ -24,4 +24,5 @@ def datastack_view(datastack_name):
         datastack=datastack_name,
         title="Home Page",
         version=__version__,
+        url_prefix=os.environ.get('URL_PREFIX', 'dash')
     )

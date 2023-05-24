@@ -8,7 +8,7 @@
   </tr>
   {% for app in config.DASH_DATASTACK_SUPPORT[datastack].keys() %}
   <tr>
-    <td><a href='/dash/datastack/{{datastack}}/apps/{{app}}/?datastack="{{datastack}}"'>{{app}}</a></td>
+    <td><a href='/{{url_prefix}}/datastack/{{datastack}}/apps/{{app}}/?datastack="{{datastack}}"'>{{app}}</a></td>
   </tr>
   {% endfor %}
 

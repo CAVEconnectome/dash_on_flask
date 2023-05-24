@@ -15,7 +15,7 @@ def create_app():
     server = Flask(
         __name__,
         static_folder="./static",
-        static_url_path="/dash/static",
+        static_url_path=f"/{os.environ.get('URL_PREFIX', 'dash')}/static",
         instance_relative_config=True,
     )
     server = configure_app(server)
@@ -43,9 +43,9 @@ def register_dashapps(app):
                     __name__ + dapp,
                     config=dapp_config["config"],
                     server=app,
-                    url_base_pathname=f"/dash/datastack/{datastack}/apps/{dapp}/",
+                    url_base_pathname=f"/{os.environ.get('URL_PREFIX', 'dash')}/datastack/{datastack}/apps/{dapp}/",
                     assets_folder=get_root_path(__name__)
-                    + f"/dash/datastack/{datastack}/apps/{dapp}/",
+                    + f"/{os.environ.get('URL_PREFIX', 'dash')}/datastack/{datastack}/apps/{dapp}/",
                     meta_tags=[meta_viewport],
                 )
 
@@ -70,4 +70,4 @@ def register_extensions(server):
 def register_blueprints(server):
     from app.webapp import server_bp
 
-    server.register_blueprint(server_bp, url_prefix="/dash/")
+    server.register_blueprint(server_bp, url_prefix=f"/{os.environ.get('URL_PREFIX', 'dash')}/")
