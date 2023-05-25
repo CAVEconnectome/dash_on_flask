@@ -3,7 +3,7 @@ from flask import render_template
 from middle_auth_client import auth_requires_permission
 import os 
 
-__version__ = "1.11.2"
+__version__ = "1.12.0"
 
 server_bp = Blueprint("main", __name__)
 
