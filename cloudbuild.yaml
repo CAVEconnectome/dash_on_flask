@@ -12,8 +12,6 @@ steps:
       - |
         docker build -t $$USERNAME/dashonflask:$TAG_NAME .
     timeout: 600s
-images:
-  - "docker.io/$USERNAME/dashonflask:$TAG_NAME"
 availableSecrets:
   secretManager:
     - versionName: projects/$PROJECT_ID/secrets/docker-password/versions/1
