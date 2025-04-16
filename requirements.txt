@@ -44,7 +44,7 @@ dash==2.16.1
     #   dash-connectivity-viewer
 dash-bootstrap-components==1.6.0
     # via dash-connectivity-viewer
-dash-connectivity-viewer @ git+https://github.com/CAVEconnectome/dash-connectivity-viewer.git@v2.2.6
+dash-connectivity-viewer==2.2.7
     # via -r requirements.in
 dash-core-components==2.0.0
     # via dash

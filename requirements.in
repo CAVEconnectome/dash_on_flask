@@ -1,4 +1,4 @@
 flask
 dash
-dash-connectivity-viewer @ git+https://github.com/CAVEconnectome/dash-connectivity-viewer.git@v2.2.6#egg=dash_connectivity_viewer
+dash-connectivity-viewer==2.2.7
 middle-auth-client>=3.11.1
