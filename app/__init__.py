@@ -38,10 +38,17 @@ def register_dashapps(app):
     for datastack, dapps in app.config["DASH_DATASTACK_SUPPORT"].items():
         for dapp, dapp_config in dapps.items():
             create_app = dapp_config["create_app"]
+            app_config = dict(dapp_config.get("config", {}))
+            # Safety-net defaults; all production configs should set these explicitly.
+            app_config.setdefault("datastack", datastack)
+            app_config.setdefault(
+                "server_address",
+                os.environ.get("CAVE_SERVER_ADDRESS", "https://global.daf-apis.com"),
+            )
             with app.app_context():
                 dashapp1 = create_app(
                     __name__ + dapp,
-                    config=dapp_config["config"],
+                    config=app_config,
                     server=app,
                     url_base_pathname=f"/{os.environ.get('URL_PREFIX', 'dash')}/datastack/{datastack}/apps/{dapp}/",
                     assets_folder=get_root_path(__name__)
