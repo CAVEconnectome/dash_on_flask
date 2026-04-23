@@ -1,4 +1,5 @@
 flask
 dash
-dash-connectivity-viewer==2.2.7
+dash-connectivity-viewer
 middle-auth-client>=3.11.1
+cell_search==0.0.1

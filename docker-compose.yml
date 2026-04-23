@@ -7,6 +7,8 @@ services:
             - .:/app
         env_file:
             - .prod.env
+        environment:
+            - CELL_SEARCH_DATA_PATH=/app/data/microns_SomaData_AllCells_v661.parquet
         command: 'false'
 
     app:
