@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "dash_on_flask"
-version = "0.1.0"
+version = "1.16.1"
 description = "Dash app integrated with Flask and authentication"
 authors = ["Oleg Komarov <oleg.komarov11@gmail.com>"]
 license = "MIT License"
