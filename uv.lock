@@ -993,6 +993,7 @@ dependencies = [
     { name = "dash-connectivity-viewer" },
     { name = "flask" },
     { name = "middle-auth-client" },
+    { name = "uwsgi" },
 ]
 
 [package.dev-dependencies]
@@ -1007,6 +1008,7 @@ requires-dist = [
     { name = "dash-connectivity-viewer" },
     { name = "flask" },
     { name = "middle-auth-client", specifier = ">=3.11.1" },
+    { name = "uwsgi" },
 ]
 
 [package.metadata.requires-dev]
@@ -4161,6 +4163,12 @@ brotli = [
     { name = "brotli", marker = "platform_python_implementation == 'CPython'" },
     { name = "brotlicffi", marker = "platform_python_implementation != 'CPython'" },
 ]
+
+[[package]]
+name = "uwsgi"
+version = "2.0.31"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/9f/49/2f57640e889ba509fd1fae10cccec1b58972a07c2724486efba94c5ea448/uwsgi-2.0.31.tar.gz", hash = "sha256:e8f8b350ccc106ff93a65247b9136f529c14bf96b936ac5b264c6ff9d0c76257", size = 822796, upload-time = "2025-10-11T19:17:28.794Z" }
 
 [[package]]
 name = "wcmatch"
