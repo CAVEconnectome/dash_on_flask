@@ -6,7 +6,7 @@ requires-python = ">=3.10"
 dependencies = [
     "flask",
     "dash",
-    "dash-connectivity-viewer",
+    "dash-connectivity-viewer>=2.3.2",
     "middle-auth-client>=3.11.1",
     "cell-search",
     "uwsgi",
@@ -34,3 +34,14 @@ filename = "app/webapp.py"
 filename = "pyproject.toml"
 search = 'version = "{current_version}"'
 replace = 'version = "{new_version}"'
+
+[[tool.bumpversion.files]]
+filename = "uv.lock"
+search = """
+name = "dash-on-flask"
+version = "{current_version}"
+"""
+replace = """
+name = "dash-on-flask"
+version = "{new_version}"
+"""
