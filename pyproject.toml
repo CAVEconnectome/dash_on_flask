@@ -6,7 +6,7 @@ requires-python = ">=3.10"
 dependencies = [
     "flask",
     "dash",
-    "dash-connectivity-viewer>=2.3.2",
+    "dash-connectivity-viewer>=2.3.3",
     "middle-auth-client>=3.11.1",
     "cell-search",
     "uwsgi",

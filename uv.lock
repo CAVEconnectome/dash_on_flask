@@ -959,7 +959,7 @@ wheels = [
 
 [[package]]
 name = "dash-connectivity-viewer"
-version = "2.3.2"
+version = "2.3.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "cachetools" },
@@ -979,9 +979,9 @@ dependencies = [
     { name = "seaborn" },
     { name = "standard-transform" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/90/bf/5cdfa6320d6d80ba91fb4378520f2cb1543a7cc29a258812f5bbf8e73e33/dash_connectivity_viewer-2.3.2.tar.gz", hash = "sha256:a4e057ff819d627f4fa2e8bc5432e84f6819d0e992c20160e933130ac836e079", size = 40461, upload-time = "2026-09-12T01:30:37.884Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/de/d5/d086f60441be0f2fd77dab40f6ff6d861a8fcaa311e89152c756c7bd487d/dash_connectivity_viewer-2.3.3.tar.gz", hash = "sha256:b0f2cb71b04b0b0b7a8d5d22df5294c13a6d729a5cb9aa48d53572785857d6e3", size = 40943, upload-time = "2026-09-22T21:19:18.386Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/13/01/ed45c9dc14b8d15d55e08b5169b9ab6c9f4d7189e9f439290e21838afcc4/dash_connectivity_viewer-2.3.2-py3-none-any.whl", hash = "sha256:e8b4435ba30bc80754453f7cf230e288f6be0d7c593ad71c83134af7ddd3fb9d", size = 52569, upload-time = "2026-09-12T01:30:36.805Z" },
+    { url = "https://files.pythonhosted.org/packages/81/4b/678a0419c03a297362b5eff67813e2bde8b6fca676c57dcab958c9d8dad6/dash_connectivity_viewer-2.3.3-py3-none-any.whl", hash = "sha256:272393d94f2d6e2ae23a91b17bf8e7b9ece08dfab728b343fb1a5f4d939dfef1", size = 53129, upload-time = "2026-09-22T21:19:17.306Z" },
 ]
 
 [[package]]
@@ -1006,7 +1006,7 @@ dev = [
 requires-dist = [
     { name = "cell-search" },
     { name = "dash" },
-    { name = "dash-connectivity-viewer", specifier = ">=2.3.2" },
+    { name = "dash-connectivity-viewer", specifier = ">=2.3.3" },
     { name = "flask" },
     { name = "middle-auth-client", specifier = ">=3.11.1" },
     { name = "uwsgi" },
